@@ -1,0 +1,193 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %}my cart{% endblock %}
+
+{% block third-party-link %}<!-- for owl-carousel css files-->
+<!--2. owl carousel min.css link-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!--3. link owl carousel theme min.css-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+{% endblock %}
+{% block css %}
+<style>
+  h4{
+    font-style: oblique;
+    color: #3cbc3c ;
+  
+    margin-bottom: 17px;
+    
+ }
+
+ .item{
+     height: 30rem;
+ }
+ .card img{
+   border: 3px solid snow;
+   height:18rem;
+ }
+ #catg_name{
+   margin-bottom: 15px;
+   font-style: italic;
+   
+ }
+ .card{
+   border: 3px solid black;
+   border-radius: 8px;
+ }
+ 
+</style>
+{% endblock %}
+
+{% block body %}<!-- body start here-->
+<h4 class="text-center fw-bold display-7">choose best product for you and yourselves</h4> <hr>
+    
+  
+{% for cat in all_cat %}  
+  
+<section>
+<!-- carousel starts here-->
+<div class="container">
+  <h2 id="catg_name">{{cat}}</h2>
+  <div class="row">
+    <div class="owl-carousel owl-theme">
+   {% for i in product|slice:"0:" %}<!--CREATING FOR LOOP FOR SHOWING PRODUCTS FROM DATABASE & NOT WRITING ITEM
+   AGAIN-2 FOR EVERY PRODUCT like in old code in index1 ,SLICE TELLS FROM WHICH START PRODUCT LOOP, "0" is for first.
+   HERE,WE DON'T NEED |sli-- since we are starting from "0" &(for i in product) sufficient, but we wrote it to know--> 
+   {% if i.category == cat %} 
+   <!---item starts here -->
+   <div class="item">
+     <!---- this is our card-->
+     <div class="card border-2 shadow" style="width: 18rem;"><!--n is size of border in border-n -->
+       <img src='/media/{{i.image}}' class="card-img-top" alt="...">
+       <div class="card-body">
+         <h5 class="card-title" id="namepr{{i.id}}">{{i.product_name}}
+         <h5 class="card-title">value: Rs.<span id="price_pr{{i.id}}">{{i.price}}</span></h5>
+         <p class="card-text">{{i.desc|slice:":30"}}</p><!--it will show limited desc & so,will not affect card size-->       
+       <span id = "divpr{{i.id}}" >      
+         <button id="pr{{i.id}}" class="btn btn-primary cart"><!--cart in button class to -->
+           Add to cart<!---- make jquery work, i.e in js script-->
+         </button>  
+        </span>
+          <a href="/shop/productview/{{i.id}}" id="qv{{i.id}}" class="btn btn-primary">Quickview</a> 
+         <!--button created myself to point user to product page of each products-->
+
+      
+       </div>
+     </div>
+     <!---card ends here-->
+   </div>
+   <!--item end here-->
+   
+   {% endif %}
+   {% endfor %}
+  </div>
+ </div> <hr>
+  </div>  
+</section> 
+<!-- carousel ends here-->
+{% endfor %}
+
+<!-- 4. jquery --> <!--IT COMMETED BECAUSE SAME LINK ALREADY IN BASIC PAGE & WILL PROVIDE JQUERY ACESS TO ALL PAGES -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+<!-- NOTE: include cdn files for owl crousel bootstrap-->
+<!-- 1. owl carousel min.js & 2. owl carousel min.css in head-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- owl carousel setup-->
+<script>
+  
+  $('.owl-carousel').owlCarousel({
+    
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:0
+        },
+        1000:{
+            items:3
+        },
+        1200:{
+            items:4
+        },
+      
+    } 
+})
+</script>
+<!-- setup end-->
+{% endblock %}
+
+{% block js %}
+<script> 
+  // javascript to take user data when it move from index to cart for buying product.
+  //console.log("rohit");// to write rohit on console
+ // localStorage.clear(cart)
+  if(localStorage.getItem('cart')== null){ // if cart not exist.
+    var cart = {}
+  }
+  else{
+    cart = JSON.parse(localStorage.getItem('cart')); // load cart in 'cart' var if existes.
+     
+  }
+document.getElementById('cart').innerHTML= Object.keys(cart).length;  
+$('.cart').click(function(){ // jquery .cart = class cart, run function on clicking cart.
+    console.log("clicked") // write (cart) in btn(add to cart) class at end without removing existing name.
+    
+    var idstr = this.id.toString();// get id of this class('cart')
+    
+    if (cart[idstr] !=undefined){// means this item is in cart. 
+    cart[idstr][0] += 1;  //new code now instead of card[idstr] = 1
+    
+
+    qty = cart[idstr][0]  ;//cart[idstr][0] is qty in cart[idstr list] in created in else section .
+   // name = "item name";
+    //cart[idstr] = [qty,name]// no need here because if this cart[idstr] not empty i.e it is in cart already then we
+    // don't need cart[idstr] again & qty will update & name is same as entered before so, no need it also.
+
+    }
+    else{
+    // cart[idstr] = 1; {old code} & left is new code.
+     qty = 1
+     name  = document.getElementById('name'+ idstr).innerHTML;// to get name of item with individual id .
+     price=  document.getElementById('price_'+idstr).innerHTML;
+     cart[idstr] = [qty,name,parseInt(price)]
+    }
+   
+    localStorage.setItem('cart',JSON.stringify(cart))// stringify to convert cart to string
+    document.getElementById('cart').innerHTML= Object.keys(cart).length;//it will count no. of products(not same)'added
+    // to cart and innerHTML will replace 0 with this no. in span tag of id = "cart" in popover created by myself.
+    console.log(cart[idstr][2])
+    
+ });
+// to activate popover.
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+//document.getElementById("popcart").setAttribute('data-bs-content',"<h5>sahi chal raha hai</h5>");
+updatePopover(cart)
+function updatePopover(cart){
+  //console.log('updatePopover function')
+  
+  var popStr = "";
+  popStr = popStr + '<h5>Cart of your items</h5>'+"<div class=''>"
+  var i = 1; // added div just to make control over popStr for styling & not compulsory. 
+  for (var item in cart){
+    popStr = popStr +"<b>" + i + ".</b>" + ' '
+    popStr = popStr + document.getElementById('name'+item).innerHTML.slice(0,22) + "Qty:" + cart[item][0]+ '<br>';
+    i = i+1;  //.slice(0,n) will allow only n words of productname to show as like slice:"0:n" of django.
+  }
+  popStr = popStr + "</div>" 
+  //console.log(popStr,cart)
+  document.getElementById("popcart").setAttribute('data-bs-content',popStr);
+  
+}
+
+
+</script>
+{% endblock %}
+

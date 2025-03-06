@@ -1,0 +1,1 @@
+this is static file(shopstatic.txt) in shop->static

@@ -1,0 +1,103 @@
+{% extends 'shop/basic.html' %}
+{% block title%} myCart->Tracker{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2> you can track your order here- Add your email & order id to verify you.</h2>
+
+    <form action="/shop/tracker/" method="POST" id="trackerForm"> {% csrf_token %}
+        <input type="hidden" name="itemsJSON" id="itemsJSON">
+        <div class="form-row">
+           <div class="form-row">
+               
+               <div class="form-group col-md-6">
+                   <label for="inputEmail4">Email</label>
+                   <input type="email" class="form-control" id="Email" placeholder="Email" name="email">
+               </div>
+           
+              <div class="form-group">
+               <label for="inputZip">order id</label>
+               <input type="tel" class="form-control" id="order_id" name="orderId" placeholder="order_id">
+           </div>
+           <button type="submit" class="btn btn-primary my-3" id="submit" >Track Order</button>
+          </div>
+       </form>
+        
+      <ul class="list-group" id="items">
+    <!-- updates li will append here -->
+      </ul>   
+    
+    <!-- form to take user address and other details-->
+    <div class="col my-3 ">
+      <h2> your order details are</h2>
+      <ul class="list-group" id="ordered-items">
+      
+      </ul>   
+
+        
+</div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script>
+$('#trackerForm').submit(function(event) {
+    $('#items').empty();
+    var formData = {
+        'orderId': $('input[name=orderId]').val(),
+        'email': $('input[name=email]').val(),
+        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()//hidden input tag named 'csrfmi--token'sent 
+//                                                          by django for form&can be seen on chrome inspect.
+  };                                                          
+  $.ajax({   // to update page without reloding 
+      type: 'POST',
+      url: '/shop/tracker/',
+      data: formData,
+      encode: true
+   })
+  .done(function(data) {
+   // console.log(data)
+    data = JSON.parse(data) // from views.py trcker {response}
+    console.log('data---------------',data)
+    updates = data[0];
+    if(updates == undefined){
+      mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+         sorry no information
+         </li>`
+      $('#items').append(mystr) ;
+    }  
+    else if (updates.length > 0 & updates != {}){
+      for (i=0;i<updates.length;i++){
+        let text = updates[i]['text']
+        let time = updates[i]['time']
+         
+        mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+         ${text} 
+          <span class="badge bg-primary rounded-pill">${time}</span>
+         </li>`
+        $('#items').append(mystr) ;
+      }
+      // to fill order details.
+      cart = JSON.parse(data[1]) // data[1] is a string & JSON.parse will convert it to json.
+      console.log(cart)
+      for (item in cart){ 
+      name = cart[item][1]
+      qty  = cart[item][0]
+      mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+          ${name} 
+          <span class="badge bg-primary rounded-pill">${qty}</span>
+        </li>`
+      $('#ordered-items').append(mystr) ;
+      }
+    }
+    
+      
+  });
+  
+ event.preventDefault();// it is along with ajax to prevent reloding of page on clicking trackorder buttton.
+});
+</script>
+
+{% endblock %}
+      

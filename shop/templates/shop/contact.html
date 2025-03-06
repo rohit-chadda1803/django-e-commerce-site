@@ -1,0 +1,45 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %} mycart->shop->contact {% endblock %}
+{% block css %}
+<style>
+    body{
+        font-style: italic;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
+
+{% block body %} 
+<div class="container">
+    <h2>  Contact us!</h2>
+    <form action="/shop/contact/" method="POST">{% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="E-mail" name="e-mail">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Phone</label>
+            <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="phone no." name="tel">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Query</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"name="query"></textarea>
+          </div>
+        <button type="submit" class="btn btn-success" id="form_submit">submit</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+$('#form_submit').click(function(){
+    
+    alert(`thankyou for sharing your queries with us.We will try to give you best solution as soon as possible.`)
+})
+</script>
+{% endblock %}

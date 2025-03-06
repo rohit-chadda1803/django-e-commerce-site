@@ -1,0 +1,45 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %}prodoductview{% endblock %}
+{% block css %}
+<style>
+    img{
+        border: 2px solid black;
+    }
+    
+</style>
+{% endblock %}
+
+{% block body %} 
+<div class="container my-4">
+<div class="row">
+    <div class="col-md-4">
+        <div class="row">
+            <img src="/media/{{product.image}}">
+        </div>
+            
+        <div class="row">
+               <button class="btn btn-primary my-1" href="/shop"> <a href="/shop" style="color: whitesmoke; text-decoration: none;">go to home to Buy now</a></button>
+               <button class="btn btn-primary my-1" href="/shop">and just Add To Cart</button>
+        </div>   
+    
+    </div>
+    <div class="col-md-4">
+      <b>
+        <h5> {{product.product_name}} </h5>
+        <p> Value: Rs{{product.price}} </p>
+        <p> Category: {{product.category}} </p>
+        <p> Arrived on: {{product.pub_date}} </p>
+        <p> Description: {{product.desc}} </p>
+      </b>
+    
+    </div>
+</div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+
+</script>
+{% endblock %}

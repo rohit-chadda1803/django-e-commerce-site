@@ -1,0 +1,135 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %} mycart->shop->checkout {% endblock %}
+{% block css %} 
+<style>
+    h2{
+        color: royalblue;
+        text-shadow: 1.5px 1.5px black;
+    }
+    body{
+        font-style: italic;
+        font-weight: bold;
+    
+    }
+    
+    </style>
+{% endblock %}
+
+
+{% block body %}
+
+
+<div class="container">
+<h2>Step-1 Confirm your product details for COD(Cash on delivery)</h2>
+    <ul class="list-group" id="items">
+        
+    </ul>   
+
+<!-- form to take user address and other details-->
+<div class="col form my-3 ">
+    <h2> Step 2 - Enter Address & Other Details</h2>
+    <form action="/shop/checkout/" method="POST"> {% csrf_token %}
+        <input type="hidden" name="itemsJSON" id="itemsJSON">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="name">Name</label>
+                <input type="name" class="form-control" id="name" placeholder="Name" name="name">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="Email" placeholder="Email" name="email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="Address" placeholder="1234 Main St" name ="address">
+        </div>
+        <div class="form-group">
+            <label for="inputAddress2">Address Line 2</label>
+            <input type="text" class="form-control" id="Address2" placeholder="Apartment, studio, or floor" name="address2">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="City" name = "city">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <input type="text" class="form-control" id="state" placeholder="Enter State" name="state">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputZip">Pin code</label>
+                <input type="text" class="form-control" id="pin" name="pin">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputZip">Phone Number</label>
+            <input type="tel" class="form-control" id="Phone" name="phone">
+        </div>
+        <button type="submit" class="btn btn-primary my-3" id="submit">Place Order</button>
+    </form>
+</div>
+</div>
+</div>
+{% endblock %}
+
+{% block js %}
+
+<script>// to get cart items from index stored in ('cart')
+    if (localStorage.getItem('cart')==null){
+        var cart = {}
+    }else{
+      cart = JSON.parse(localStorage.getItem('cart'))
+    }
+var sum = 0;
+
+//to display product name & quantity list { in bootstrap ul written above }
+if ($.isEmptyObject(cart)){
+    // if cart is empty
+    text_css = `style="border: 2px solid black; border-radius: 5px; margin-top:20px; padding:13px;"`
+    
+    go_to_shop = `<a href="/shop/" id="go_shop_button" style="text-decoration:none;"> grab now <a>`
+    mystr = `<h3 ${text_css}>your cart is empty - add your favourite products in your cart & ${go_to_shop}</h3>`
+    
+    $('#items').append(mystr)
+
+    
+}
+else{
+  let total_price = 0 ;  
+  for (item in cart){
+  let item_price = cart[item][2]
+  let name = cart[item][1]
+  let qty  = parseInt(cart[item][0])
+  total_price = total_price + item_price*(qty)
+  mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+          ${name} 
+          <span class="badge bg-primary rounded-pill">${qty}</span>
+        </li>`
+  $('#items').append(mystr) ;
+  sum = sum +1// all item {not same} in cart
+  }
+  totl_price_str = `<li class="list-group-item d-flex justify-content-between align-items-center my-1">
+          <h5>Your total payable amount is</h5> 
+          <span class="badge bg-dark rounded-pill p-2"> Rs.${total_price}</span>
+        </li>`
+  $('#items').append(totl_price_str) ;
+}
+document.getElementById('cart').innerHTML = sum// to get no. of product in cart(no.) button.
+
+$('#itemsJSON').val(JSON.stringify(cart));
+// clearing cart and giving thankyou on confirming order.
+$('#submit').click(function(){// clear cart when user confirmed order.
+  alert(`thankyou for ordering  from us. We hope , you will like these special items & will visit us again. you can track your order on our tracker`)
+  localStorage.clear(cart) 
+  document.location = "/shop" ;
+})
+
+
+
+</script>
+{% endblock %}
+
+
+

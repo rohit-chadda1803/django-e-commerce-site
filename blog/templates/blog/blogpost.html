@@ -1,0 +1,73 @@
+{% extends "blog/basic.html"%}
+
+{% block title %}Blog->blog post{% endblock %}
+
+{% block css %}
+<style>
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+  <div class="row mt-4">
+      <div class="col-md-8 blog-main">
+          <h1 class="pb-4 mb-4 font-italic border-bottom">
+            {{blog.title}}  
+          </h1>
+          <div class="blog-post">
+              <h2 class="blog-post-title">{{blog.heading1}}</h2>
+              <p class="blog-post-meta"> <a href="#" style="font-style: italic;">publisher:{{blog.publisher}}</a></p>
+              <p>{{blog.conthead1}}</p>
+              <h2>{{blog.heading2}}</h2>
+              <p>{{blog.conthead2}}</p>
+              <h2>{{blog.heading3}}</h2>
+              <p>{{blog.conthead3}}</p>
+          </div><!-- /.blog-post -->
+      </div><!-- /.blog-main -->
+      <aside class="col-md-4 blog-sidebar">
+          <div class="p-4 mb-3 bg-light rounded">
+              <h4 class="font-italic">About</h4>
+              <p class="mb-0">myCart is an <em>ecommerce website</em>. You can use it for buying and searching items online. </p>
+          </div>
+          <p>
+              post id: <a href="" id="blog_post_id">{{blog.post_id}}</a>
+          </p>
+          <div class="p-4">
+              <h4 class="font-italic">Contact Us: </h4>
+              <ol class="list-unstyled">
+                  <li><a href="#">GitHub</a></li>
+                  <li><a href="#">Twitter</a></li>
+                  <li><a href="#">Facebook</a></li>
+              </ol>
+          </div>
+      </aside><!-- /.blog-sidebar -->
+      <div class="col-md-6 sm-12"  id="previous_blog">
+          
+      </div>
+      
+      <div class="col-md-5 sm-12 m-1" id="next_blog">
+        
+      </div>
+       
+    </div>
+</div>
+
+<script>
+   a= parseInt($('#blog_post_id').html())
+   b= a-1 // previous blog id
+   c= a+1 // next blog id
+   if(b < 1){
+       b = a 
+   }
+   
+   // to make previous blog button working
+   prev_button_html = `<a href="/blog/blogpost/${b}" class = "btn btn-primary">previous blog</a>`
+   $('#previous_blog').html(prev_button_html)
+
+   // to make next blog button working
+   next_button_html = `<a href="/blog/blogpost/${c}" class = "btn btn-primary">next blog</a>`
+   $('#next_blog').html(next_button_html)
+</script>
+{%endblock%}
+
