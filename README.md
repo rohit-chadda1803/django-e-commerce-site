@@ -4,4 +4,4 @@ here  mycart , myblog , dir ,manage.py all at same level are inside path , im te
 
 Project detailed video  : 
 
-https://drive.google.com/file/d/1Jdd730uF6sQEQQUXE3ASuZLgO589QCGn/view?usp=drive_link
+https://drive.google.com/file/d/1ErF0hN-BB97sbxsGMuxL8JeAEVZqZAF9/view?usp=drive_link
