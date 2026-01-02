@@ -144,3 +144,44 @@ urlpatterns = [
 #        b.) def blogpost(request): to {---(myid,request):} & in it ,add(blog=---.filter(post_id=myid) & blogposted).
 
 #40.NOTE:created next blog & prev blog button in blogspot page.
+
+
+# production now : 
+
+# 1. pip install gunicorn whitenoise psycopg2-binary
+#  2 . MIDDLEWARE = [
+#     'django.middleware.security.SecurityMiddleware',
+#     'whitenoise.middleware.WhiteNoiseMiddleware',
+#     ...
+# ]
+
+# 3. STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  in settings.py
+
+# 4. creae render.yml file for render.com deployment
+
+# content :
+
+# services:
+#   - type: web
+#     name: mycart
+#     env: python
+#     buildCommand: "pip install -r requirements.txt"
+#     startCommand: "gunicorn mycart.wsgi:application"
+
+
+# 5. Create Procfile for  deployment  //Now your Django app knows how to start on the server 🚀
+
+'''
+Procfile tells the server how to start your Django website.
+
+When your project is deployed, the hosting platform does not know:
+
+“Which file should I run to start this app?”
+
+So the Procfile answers that question.
+
+
+web:	This is a web server
+gunicorn:	production web server
+mycart.wsgi:application	: Django entry point
+'''
