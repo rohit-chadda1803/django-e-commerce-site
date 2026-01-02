@@ -1,0 +1,695 @@
+[
+{
+  "model": "shop.product",
+  "pk": 1,
+  "fields": {
+    "product_name": "mobile",
+    "desc": "best in this range",
+    "pub_date": "2021-08-18",
+    "price": 35000,
+    "category": "technolgy",
+    "image": "shop/images/mobile.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 2,
+  "fields": {
+    "product_name": "herb",
+    "desc": "too spice and tasty---------------------",
+    "pub_date": "2024-01-04",
+    "price": 300,
+    "category": "herb",
+    "image": "shop/images/herb.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 3,
+  "fields": {
+    "product_name": "book",
+    "desc": "heaven of readers",
+    "pub_date": "2021-06-28",
+    "price": 200,
+    "category": "learning",
+    "image": "shop/images/book.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 4,
+  "fields": {
+    "product_name": "laptop",
+    "desc": "be cool and techy",
+    "pub_date": "2021-08-18",
+    "price": 60000,
+    "category": "technolgy",
+    "image": "shop/images/laptop.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 5,
+  "fields": {
+    "product_name": "dance e -tutorial",
+    "desc": "dance with no fear---------------------------------",
+    "pub_date": "2024-01-30",
+    "price": 1499,
+    "category": "learning",
+    "image": "shop/images/dance.png"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 6,
+  "fields": {
+    "product_name": "rocket sticker",
+    "desc": "easy to stick and cool to look",
+    "pub_date": "2021-06-28",
+    "price": 100,
+    "category": "stickers",
+    "image": "shop/images/rocket.png"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 7,
+  "fields": {
+    "product_name": "Golang e-tutorial",
+    "desc": "learn and joy the golang",
+    "pub_date": "2021-08-18",
+    "price": 999,
+    "category": "learning",
+    "image": "shop/images/fiveyears.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 8,
+  "fields": {
+    "product_name": "lightning quote",
+    "desc": "light board with inspiring quote",
+    "pub_date": "2021-08-18",
+    "price": 999,
+    "category": "technolgy",
+    "image": "shop/images/dogreat.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 9,
+  "fields": {
+    "product_name": "colourfull evening",
+    "desc": "peaceful,colourful evening sinory",
+    "pub_date": "2023-12-18",
+    "price": 799,
+    "category": "decoration",
+    "image": "shop/images/colourfull_sky2.jpg.png"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 10,
+  "fields": {
+    "product_name": "quote board",
+    "desc": "inspirational quote on white board",
+    "pub_date": "2023-08-18",
+    "price": 699,
+    "category": "decoration",
+    "image": "shop/images/turnreality.jpeg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 11,
+  "fields": {
+    "product_name": "harley quinn",
+    "desc": "this is 3*3m picture",
+    "pub_date": "2024-01-30",
+    "price": 300,
+    "category": "decoration",
+    "image": "shop/images/1934247.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 12,
+  "fields": {
+    "product_name": "picture",
+    "desc": "jjjjjj",
+    "pub_date": "2024-02-05",
+    "price": 200,
+    "category": "decoration",
+    "image": "shop/images/5089291.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 13,
+  "fields": {
+    "product_name": "go lang siicker",
+    "desc": "this is high quality sticker build to last long and stay glam ever.",
+    "pub_date": "2024-04-22",
+    "price": 499,
+    "category": "stickers",
+    "image": "shop/images/modelsheet.jpg"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 14,
+  "fields": {
+    "product_name": "himalyan leaf",
+    "desc": "this is the gift of nature and tea of  gods take it to live long and healthy",
+    "pub_date": "2024-04-22",
+    "price": 100,
+    "category": "herb",
+    "image": "shop/images/himalyan_leave.jfif"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 16,
+  "fields": {
+    "product_name": "paroh head",
+    "desc": "fnkfjdngfn",
+    "pub_date": "2025-03-06",
+    "price": 1000,
+    "category": "cutted collage",
+    "image": "shop/images/headdress.png"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 17,
+  "fields": {
+    "product_name": "glasses",
+    "desc": "original ranyban glasses , exclusive deal",
+    "pub_date": "2025-08-24",
+    "price": 23000,
+    "category": "luxury",
+    "image": "shop/images/download.jpg"
+  }
+},
+{
+  "model": "shop.contact",
+  "pk": 1,
+  "fields": {
+    "name": "mohit",
+    "email": "mohit123@rcmail.com",
+    "phone": "1228844758",
+    "query": "how to get oue order at desired date."
+  }
+},
+{
+  "model": "shop.contact",
+  "pk": 2,
+  "fields": {
+    "name": "rohit",
+    "email": "rohit123@rcmail.com",
+    "phone": "1228844758",
+    "query": "how to get our order on desired date"
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 1,
+  "fields": {
+    "items_json": "{\"pr9\":[2,\"colourfull evening\\n         \",799],\"pr1\":[1,\"mobile\\n         \",35000],\"pr8\":[1,\"lightning quote\\n         \",999]}",
+    "name": "rohit",
+    "email": "rohit123@rcmail.com",
+    "phone": "1228844758",
+    "address": "main market,ghumarwin",
+    "city": "ghumarwin",
+    "state": "Himachal Pradesh",
+    "pin_code": "174021"
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 2,
+  "fields": {
+    "items_json": "{\"pr2\":[2,\"herb\\n         \",300],\"pr3\":[1,\"book\\n         \",200]}",
+    "name": "Nisha",
+    "email": "nisha036@rcmail.com",
+    "phone": "1228844758",
+    "address": "main market,ghumarwin",
+    "city": "ghumarwin",
+    "state": "Himachal Pradesh",
+    "pin_code": "174021"
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 3,
+  "fields": {
+    "items_json": "{\"pr5\":[1,\"dance e -tutorial\\n         \",1499],\"pr7\":[1,\"Golang e-tutorial\\n         \",999]}",
+    "name": "ROHIT CHADDA",
+    "email": "rohitchadda129@gmail.com",
+    "phone": "6230618190",
+    "address": "hmvh",
+    "city": "ghhhhg",
+    "state": "hp",
+    "pin_code": "174021"
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 4,
+  "fields": {
+    "items_json": "{\"pr8\":[1,\"lightning quote\\n         \",999],\"pr1\":[2,\"mobile\\n         \",35000],\"pr4\":[1,\"laptop\\n         \",60000]}",
+    "name": "",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "city": "",
+    "state": "",
+    "pin_code": ""
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 5,
+  "fields": {
+    "items_json": "{\"pr3\":[2,\"book\\n         \",200],\"pr7\":[2,\"Golang e-tutorial\\n         \",999],\"pr5\":[2,\"dance e -tutorial\\n         \",1499],\"pr10\":[1,\"quote board\\n         \",699],\"pr11\":[1,\"harley quinn\\n         \",300]}",
+    "name": "django bro",
+    "email": "rtgh@fmail.in",
+    "phone": "1234567889",
+    "address": "34fhuh",
+    "city": "ghhfhffh",
+    "state": "op",
+    "pin_code": "098765"
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 6,
+  "fields": {
+    "items_json": "{\"pr1\":[1,\"mobile\\n         \",35000],\"pr7\":[4,\"Golang e-tutorial\\n         \",999]}",
+    "name": "",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "city": "",
+    "state": "",
+    "pin_code": ""
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 7,
+  "fields": {
+    "items_json": "{\"pr1\":[1,\"mobile\\n         \",35000],\"pr7\":[4,\"Golang e-tutorial\\n         \",999]}",
+    "name": "",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "city": "",
+    "state": "",
+    "pin_code": ""
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 8,
+  "fields": {
+    "items_json": "{\"pr1\":[1,\"mobile\\n         \",35000],\"pr7\":[4,\"Golang e-tutorial\\n         \",999],\"pr3\":[1,\"book\\n         \",200],\"pr14\":[1,\"himalyan leaf\\n         \",100]}",
+    "name": "",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "city": "",
+    "state": "",
+    "pin_code": ""
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 9,
+  "fields": {
+    "items_json": "{\"pr7\":[1,\"Golang e-tutorial\\n         \",999]}",
+    "name": "",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "city": "",
+    "state": "",
+    "pin_code": ""
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 10,
+  "fields": {
+    "items_json": "{\"pr4\":[1,\"laptop\\n         \",60000]}",
+    "name": "",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "city": "",
+    "state": "",
+    "pin_code": ""
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 11,
+  "fields": {
+    "items_json": "{\"pr10\":[1,\"quote board\\n         \",699]}",
+    "name": "",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "city": "",
+    "state": "",
+    "pin_code": ""
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 12,
+  "fields": {
+    "items_json": "{\"pr14\":[2,\"himalyan leaf\\n         \",100],\"pr2\":[1,\"herb\\n         \",300]}",
+    "name": "",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "city": "",
+    "state": "",
+    "pin_code": ""
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 13,
+  "fields": {
+    "items_json": "{\"pr8\":[1,\"lightning quote\\n         \",999],\"pr1\":[2,\"mobile\\n         \",35000],\"pr11\":[1,\"harley quinn\\n         \",300]}",
+    "name": "",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "city": "",
+    "state": "",
+    "pin_code": ""
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 14,
+  "fields": {
+    "items_json": "{\"pr3\":[1,\"book\\n         \",200],\"pr7\":[1,\"Golang e-tutorial\\n         \",999],\"pr5\":[1,\"dance e -tutorial\\n         \",1499]}",
+    "name": "",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "city": "",
+    "state": "",
+    "pin_code": ""
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 15,
+  "fields": {
+    "items_json": "{\"pr16\":[2,\"paroh head\\n         \",1000],\"pr7\":[1,\"Golang e-tutorial\\n         \",999],\"pr11\":[2,\"harley quinn\\n         \",300],\"pr12\":[2,\"picture\\n         \",200]}",
+    "name": "",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "city": "",
+    "state": "",
+    "pin_code": ""
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 16,
+  "fields": {
+    "items_json": "{\"pr7\":[1,\"Golang e-tutorial\\n         \",999],\"pr3\":[2,\"book\\n         \",200],\"pr16\":[1,\"paroh head\\n         \",1000]}",
+    "name": "",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "city": "",
+    "state": "",
+    "pin_code": ""
+  }
+},
+{
+  "model": "shop.orders",
+  "pk": 17,
+  "fields": {
+    "items_json": "{\"pr12\":[1,\"picture\\n         \",200],\"pr11\":[2,\"harley quinn\\n         \",300],\"pr3\":[1,\"book\\n         \",200],\"pr4\":[1,\"laptop\\n         \",60000],\"pr16\":[3,\"paroh head\\n         \",1000],\"pr14\":[1,\"himalyan leaf\\n         \",100]}",
+    "name": "Rohit Chadda",
+    "email": "rohitchadda_xyz@ymil.com",
+    "phone": "0484437338",
+    "address": "vnxnkjn122n",
+    "city": "Gjbfkfjkn",
+    "state": "himachal",
+    "pin_code": "43322822"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 6,
+  "fields": {
+    "order_id": 1,
+    "update_desc": "arriving on saturday",
+    "timestamp": "2024-01-30"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 7,
+  "fields": {
+    "order_id": 2,
+    "update_desc": "arriving monday",
+    "timestamp": "2024-01-30"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 8,
+  "fields": {
+    "order_id": 1,
+    "update_desc": "will reacher sooner on saturday",
+    "timestamp": "2024-01-30"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 9,
+  "fields": {
+    "order_id": 3,
+    "update_desc": "arrinving on hallowean",
+    "timestamp": "2024-01-30"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 10,
+  "fields": {
+    "order_id": 2,
+    "update_desc": "reaching to you today",
+    "timestamp": "2024-01-30"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 11,
+  "fields": {
+    "order_id": 3,
+    "update_desc": "product has been placed",
+    "timestamp": "2025-02-24"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 12,
+  "fields": {
+    "order_id": 4,
+    "update_desc": "product has been placed",
+    "timestamp": "2025-02-25"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 13,
+  "fields": {
+    "order_id": 5,
+    "update_desc": "product has been placed",
+    "timestamp": "2025-03-06"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 14,
+  "fields": {
+    "order_id": 5,
+    "update_desc": "with this order you became our first customer of day  , so we reward you free instant 1 day delivery +  cupon \"FIRST\" to get flat 30% off on next order done within 30 march 2025",
+    "timestamp": "2025-03-06"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 15,
+  "fields": {
+    "order_id": 6,
+    "update_desc": "product has been placed",
+    "timestamp": "2025-03-12"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 16,
+  "fields": {
+    "order_id": 7,
+    "update_desc": "product has been placed",
+    "timestamp": "2025-03-12"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 17,
+  "fields": {
+    "order_id": 8,
+    "update_desc": "product has been placed",
+    "timestamp": "2025-03-12"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 18,
+  "fields": {
+    "order_id": 9,
+    "update_desc": "product has been placed",
+    "timestamp": "2025-03-12"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 19,
+  "fields": {
+    "order_id": 10,
+    "update_desc": "product has been placed",
+    "timestamp": "2025-03-14"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 20,
+  "fields": {
+    "order_id": 11,
+    "update_desc": "product has been placed",
+    "timestamp": "2025-03-14"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 21,
+  "fields": {
+    "order_id": 12,
+    "update_desc": "product has been placed",
+    "timestamp": "2025-04-11"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 22,
+  "fields": {
+    "order_id": 13,
+    "update_desc": "product has been placed",
+    "timestamp": "2025-05-27"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 23,
+  "fields": {
+    "order_id": 14,
+    "update_desc": "product has been placed",
+    "timestamp": "2025-06-19"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 24,
+  "fields": {
+    "order_id": 15,
+    "update_desc": "product has been placed",
+    "timestamp": "2025-06-19"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 25,
+  "fields": {
+    "order_id": 16,
+    "update_desc": "product has been placed",
+    "timestamp": "2025-08-24"
+  }
+},
+{
+  "model": "shop.orderupdate",
+  "pk": 26,
+  "fields": {
+    "order_id": 17,
+    "update_desc": "product has been placed",
+    "timestamp": "2025-08-24"
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 1,
+  "fields": {
+    "title": "Golang",
+    "heading1": "invention of google",
+    "conthead1": "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+    "heading2": "reason of popularity",
+    "conthead2": "-------------------------------------------------------------------------------------------------------------------",
+    "heading3": "what can do",
+    "conthead3": "------------------------------------------------------------------------------------------",
+    "category": "Programming",
+    "subcategory": "compiled language",
+    "image": "blog/images/modelsheet.jpg",
+    "pub_date": "2021-08-19",
+    "publisher": "Rohit Chadda"
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 2,
+  "fields": {
+    "title": "dance e-tutorial",
+    "heading1": "styles",
+    "conthead1": "hiphop,break dance and more------------------------------------------------------------------------------------------------------------",
+    "heading2": "tutorial language",
+    "conthead2": "hindi,english,spanish-----------------------------------------------------------------------------------------------------------------------------------------------------",
+    "heading3": "tutors",
+    "conthead3": "------------------------------------------------------------------------------------------",
+    "category": "learning",
+    "subcategory": "dance e-tutorial",
+    "image": "blog/images/icon.png",
+    "pub_date": "2021-08-19",
+    "publisher": "Prof. Reven"
+  }
+},
+{
+  "model": "blog.blogpost",
+  "pk": 3,
+  "fields": {
+    "title": "herb",
+    "heading1": "benefits",
+    "conthead1": "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+    "heading2": "availablity",
+    "conthead2": "-------------------------------------------------------------------------------------------------------------------",
+    "heading3": "quantity to consume",
+    "conthead3": "------------------------------------------------------------------------------------------",
+    "category": "herb",
+    "subcategory": "green herb",
+    "image": "blog/images/herb.jpg",
+    "pub_date": "2021-08-20",
+    "publisher": "Prof. Ramanuj"
+  }
+}
+]
