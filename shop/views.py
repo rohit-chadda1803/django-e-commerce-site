@@ -116,7 +116,7 @@ def about(request):
 
 #to create superuser on browser  . 
 def create_admin(request):
-    if User.objects.filter(username="Rohit").exists():
+    if User.objects.filter(username="Rohit_Chadda").exists():
         return HttpResponse("Admin already exists")
 
     User.objects.create_superuser(
