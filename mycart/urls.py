@@ -19,11 +19,16 @@ from django.urls import path , include # NOTE:include to attach shop folder.
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+
+from shop.views import create_admin #`to create superuser on browser`
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('shop/', include('shop.urls')),
     path('blog/', include('blog.urls')),
-    path('',views.index,name='index')
+    path('',views.index,name='index') , 
+    path("createsuperuser/", create_admin), # to create superuser on browser
+    
  ]  +  static(settings.MEDIA_URL,document_root= settings.MEDIA_ROOT)
 
 
@@ -205,3 +210,11 @@ mycart.wsgi:application	: Django entry point
 
 
 # (These files will stay on your PC.)
+
+
+# 8 . 
+# ALLOWED_HOSTS = [
+#     'mycart-shop-blog.onrender.com',
+#     'localhost',
+#     '127.0.0.1',
+# ]

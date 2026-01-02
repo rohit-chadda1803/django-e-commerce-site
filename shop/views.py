@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Product,Contact,Orders,OrderUpdate # to get data from database of Product,Contact
 import json
+from django.contrib.auth.models import User
 # Create your views here.
 def index(request):
    products= Product.objects.all()# to acess all products from database.
@@ -110,3 +111,17 @@ def tracker(request):
 def about(request):
    return render(request,'shop/about.html')
 #   return HttpResponse('about')
+
+
+
+#to create superuser on browser  . 
+def create_admin(request):
+    if User.objects.filter(username="Rohit").exists():
+        return HttpResponse("Admin already exists")
+
+    User.objects.create_superuser(
+        username="Rohit_Chadda",
+        password="Rohit_Chadda_1803",
+        email="rohitchadda129@gmail.com"
+    )
+    return HttpResponse("Superuser created")
