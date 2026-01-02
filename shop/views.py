@@ -9,7 +9,13 @@ def index(request):
    lis = [0,1,2]
    params={'product': products,'all_cat': all_cat,'lis':lis}
    #print(all_cat)'''
-   print(products[0].desc)
+   #print(products[0].desc)
+
+   if products.exists():
+    print(products.first().desc)
+   else:
+    print("No products found")
+
    return render(request,"shop/index.html",params)
    # HttpResponse('index')
 
