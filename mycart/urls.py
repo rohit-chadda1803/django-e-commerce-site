@@ -185,3 +185,23 @@ web:	This is a web server
 gunicorn:	production web server
 mycart.wsgi:application	: Django entry point
 '''
+
+#6 . gitignore ---> these files will not on github ,as they may give problems in deployment.
+# db.sqlite3
+# __pycache__/
+# *.pyc
+# media/
+# staticfiles/
+# .env
+
+# 7 . 
+# 2️⃣ Tell Git to stop tracking old files
+
+# Run:
+
+# git rm --cached db.sqlite3
+# git rm -r --cached media
+# git rm -r --cached mycart/__pycache__
+
+
+# (These files will stay on your PC.)
