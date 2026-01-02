@@ -119,9 +119,5 @@ def create_admin(request):
     if User.objects.filter(username="Rohit_Chadda").exists():
         return HttpResponse("Admin already exists")
 
-    User.objects.create_superuser(
-        username="Rohit_Chadda",
-        password="Rohit_Chadda_1803",
-        email="rohitchadda129@gmail.com"
-    )
+    
     return HttpResponse("Superuser created")
