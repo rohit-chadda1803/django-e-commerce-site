@@ -27,7 +27,17 @@ DEBUG = True
 
 # ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = ['*'] # to allow all hosts in production
+# ALLOWED_HOSTS = ['*'] # to allow all hosts in production
+
+ALLOWED_HOSTS = [ # to allow specific hosts in production
+    'mycart-shop-blog.onrender.com',
+    'localhost',
+    '127.0.0.1',
+]
+
+CSRF_TRUSTED_ORIGINS = [# to allow specific hosts for csrf token in production
+    'https://mycart-shop-blog.onrender.com',
+]
 
 
 
